@@ -55,12 +55,10 @@ class BackgroundOverlay extends AnimatedWidget {
                       child: Container(
                         width: dialKey.globalPaintBounds?.size.width,
                         height: dialKey.globalPaintBounds?.size.height,
-                        decoration: ShapeDecoration(
-                          shape: shape == const CircleBorder()
-                              ? const StadiumBorder()
-                              : shape,
-                          color: Colors.white,
-                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(7.5),
+                          color: Colors.white
+                        )
                       ),
                     );
                     return tooltip != null && tooltip!.isNotEmpty

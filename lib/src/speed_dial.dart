@@ -249,11 +249,11 @@ class _SpeedDialState extends State<SpeedDial>
   @override
   void dispose() {
     if (widget.renderOverlay && backgroundOverlay != null) {
-      if (backgroundOverlay!.mounted) backgroundOverlay!.remove();
+      if (_open && backgroundOverlay!.mounted) backgroundOverlay!.remove();
       backgroundOverlay!.dispose();
     }
     if (overlayEntry != null) {
-      if (overlayEntry!.mounted) overlayEntry!.remove();
+      if (_open && overlayEntry!.mounted) overlayEntry!.remove();
       overlayEntry!.dispose();
     }
     _controller.dispose();
